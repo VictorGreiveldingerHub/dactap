@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from "next-themes";
+import { SunMedium, Moon } from 'lucide-react';
 
 
 const ThemeToggler : React.FC = () => {
@@ -19,8 +20,14 @@ const ThemeToggler : React.FC = () => {
     return (
         <div>
             <button onClick={() => setTheme("system")}>System</button> {/* Si présent afficher la possibilité d'utiliser le système par défaut de l'utilisateur */}
-            <button onClick={() => setTheme("light")}>Light</button>
-            <button onClick={() => setTheme("dark")}>Dark</button>
+            <button 
+                onClick={() => {
+                    setTheme(theme === "light" ? "dark" : "light")
+                }}
+            >
+                <SunMedium size={20} />
+                <Moon size={20} />
+            </button>
         </div>
     );
 };

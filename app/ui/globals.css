@@ -1,25 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-@layer base {
-
-    :root {
-      --color-bg: '#f4faff';
-      --color-text: '#113264';
-      --color-success: 0 200 81;
-      --color-info: 51 181 229;
-      --color-warn: 255 187 51;
-      --color-error: 254 78 78;
-    }
-  
-    :root[class~="dark"] {
-      --color-bg: '#f9f9f9';
-      --color-text: '#202020';
-      --color-success: 0 200 81;
-      --color-info: 51 181 229;
-      --color-warn: 255 187 51;
-      --color-error: 254 78 78;
-    }
-  }

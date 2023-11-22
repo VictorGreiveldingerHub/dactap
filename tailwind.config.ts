@@ -17,31 +17,35 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // // Blue tint
-        // 'blue-bg': '#f4faff', // Background
-        // 'blue-at': '#113264', // Accessible text
-        // 'blue-ic': '#5eb1ef', // Interactive component
-        // 'blue-bs': '#0588f0', // Borders and separators
-        // 'blue-sc': '#c2e5ff', // Solid color
-        // // Red tint 
-        // 'red-bg': '#fff7f7',
-        // 'red-at': '#641723',
-        // 'red-ic': '#FFcdce',
-        // 'red-bs': '#eb3e90',
-        // 'red-sc': '#dc3e42',
-        // // Green tint
-        // 'green-bg': '#f4fbf6',
-        // 'green-at': '#193b2d',
-        // 'green-ic': '#c4e8d1',
-        // 'green-bs': '#5bb98b',
-        // 'green-sc': '#2b9a66',
-        // // Dark tint
-        // 'dark-bg': '#f9f9f9',
-        // 'dark-at': '#202020',
-        // 'dark-ic': '#838383',
-        // 'dark-bs': '#bbbbbb',
-        // 'dark-sc': '#e0e0e0',
-        bg: "(var(--color-bg) / <alpha-value>)"
+        // DarkMode
+        gray: {
+          100: "#f9f9f9",
+          200: "#838383",
+          300: "#bbbbbb",
+          400: "#e0e0e0",
+          900: "#202020"
+        },
+        blue: {
+          100: "#f4faff",
+          200: "#5eb1ef",
+          300: "#0588f0",
+          400: "#c2e5ff",
+          900: "#113264"
+        },
+        red: {
+          100: "#fff7f7",
+          200: "#FFcdce",
+          300: "#eb3e90",
+          400: "#dc3e42",
+          900: "#641723"
+        },
+        green: {
+          100: "#f4fbf6",
+          200: "#c4e8d1",
+          300: "#5bb98b",
+          400: "#2b9a66",
+          900: "#193b2d"
+        }
       },
     },
   },
