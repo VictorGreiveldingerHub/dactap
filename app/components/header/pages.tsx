@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Settings } from "lucide-react";
 
 const Header = () => {
     return (
@@ -16,7 +17,9 @@ const Header = () => {
                 {/* <button>Déconnexion</button> */}
             </div>
 
-            <button>Param</button>
+            <button>
+                <Settings />
+            </button>
         </header>
     );
 };

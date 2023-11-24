@@ -22,7 +22,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  let ezr = "violet"; // Voir pour inclure les pallettes de couleurs selon le theme voulu ! === state
+  let ezr = "pend"; // Voir pour inclure les pallettes de couleurs selon le theme voulu ! === state
   return (
     <html lang="en" className="h-full">
       <body className={clsx("container dark:bg-gray-900 dark:text-gray-100", {
