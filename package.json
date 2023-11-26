@@ -34,6 +34,5 @@
     "fs": false,
     "os": false,
     "path": false
-  },
-  "dns": "file:./src/mock/dns"
+  }
 }

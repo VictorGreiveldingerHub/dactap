@@ -1,9 +1,10 @@
 'use client'
 
 import React, { useState } from 'react';
-import sendMail from './sendMail'; // Import du module sendMail
+import SendMail from './sendMail';
 
 export default function Home() {
+
   const initialFormData = {
     email: '',
     first: '',
@@ -17,7 +18,7 @@ export default function Home() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      await sendMail(formData); // Envoi des données du formulaire à sendMail
+      await SendMail(formData); // Envoi des données du formulaire à sendMail
       // Réinitialiser le formulaire après l'envoi
       setFormData(initialFormData);
     } catch (error) {
