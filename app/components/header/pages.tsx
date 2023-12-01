@@ -9,6 +9,7 @@ const Header = () => {
                 <Link href="/games">Jeux</Link>
                 <Link href="/profil">Profil</Link>
                 <Link href="/dashboard">Statistiques</Link>
+                <Link href="/connection">Connexion</Link>
             </nav>
             <div className="flex basis-1/2 justify-center">
                 <button>Connexion</button>
