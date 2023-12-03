@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={clsx("dark:bg-gray-900 dark:text-gray-100", {
-        "bg-blue-50 text-blue-950" : ezr === "hello", 
+        "bg-blue-100 text-blue-900" : ezr === "hello", 
         "bg-red-100 text-red-900" : ezr === "pend",
         "bg-violet-100 text-violet-900": ezr === "violet"
         })}>

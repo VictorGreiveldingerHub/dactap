@@ -2,11 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { Settings } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 const Header = () => {
-    const router = useRouter();
-    console.log(router);
     return (
         <header className="flex mx-10 my-5 font-bold">
             <nav className="flex basis-1/2 justify-between items-center">

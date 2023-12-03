@@ -16,12 +16,19 @@ import SvgComponent from "@/app/ui/utils/SvgComponent";
 
 
 const HomePage = () => {
+  const svgProps = {
+    width: '100vw',
+    height: "100vh",
+    fill: "bg-blue-100",
+    fill2: "bg-blue-900"
+  }
+
   return (
     <main>
       <div className={`${signika.className} antialiased flex flex-col`}>
         {/* Page d'accueil - Hero Header */}
-        <div className="container mx-auto flex flex-wrap items-center">
-          <SvgComponent />
+        <div className="mx-auto flex flex-wrap items-center">
+          {/* <SvgComponent {...svgProps} /> */}
           <div>
             <h1>Bienvenue sur Dactap_</h1>
             <h4>Substituez l'écriture manuscrite à l'art de la frappe au clavier (Dactylographie).</h4>
