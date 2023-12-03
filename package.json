@@ -14,6 +14,12 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "lucide-react": "^0.292.0",
+<<<<<<< HEAD
+    "next": "^14.0.3",
+    "next-themes": "^0.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+=======
     "net": "^1.0.2",
     "next": "14.0.2",
     "next-themes": "^0.2.1",
@@ -21,6 +27,7 @@
     "nodemailer": "^6.9.7",
     "react": "^18",
     "react-dom": "^18"
+>>>>>>> 1280b3f4dc3ada9ab0cc92af0496c801d2680691
   },
   "devDependencies": {
     "@types/node": "^20",
