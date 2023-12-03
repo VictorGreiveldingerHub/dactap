@@ -1,14 +1,17 @@
 import { NextAuthOptions } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from '@/prisma/client';
 
 const prisma = new PrismaClient();
 
 export const authOptions: NextAuthOptions = {
+  session: {
+    strategy: "jwt",
+  },
   providers: [
-    Credentials({
-      name: "Credentials",
+    CredentialsProvider({
+      name: "credentials",
       credentials: {
         username: { label: "Username" },
         password: { label: "Password" },
@@ -22,8 +25,6 @@ export const authOptions: NextAuthOptions = {
           }
         });
 
-        console.log(people?.Mail)
-
         if (people?.Mail !== credentials?.username || people?.Mot_De_Passe !== credentials?.password) {
           throw new Error('invalid credentials');
         }
@@ -32,17 +33,7 @@ export const authOptions: NextAuthOptions = {
           email: people?.Mail
         } as any;
       }
-      /*authorize(credentials, req) {
-
-        if (credentials?.username === "admin@example.com" && credentials.password === "admin") {
-          return {
-            id: "1",
-            email: "admin@example.com",
-          };
-        }
-
-        return null;
-      },*/
     }),
   ],
+  adapter: PrismaAdapter(prisma),
 };

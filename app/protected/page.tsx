@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import { NextPage } from "next";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
@@ -9,12 +9,12 @@ const Protected: NextPage = (): JSX.Element => {
   const { status, data } = useSession();
   const [loading, setLoading] = useState(true);
 
-  const router = useRouter()
-  
+  const router = useRouter();
+
   useEffect(() => {
     const checkAuthentication = async () => {
       if (status === "unauthenticated") {
-        router.push('/connection')
+        router.push("/connection");
       } else if (status === "authenticated") {
         setLoading(false);
       }
