@@ -1,32 +1,38 @@
 'use client'
 
 import React, { useState } from 'react';
-import SendMail from './sendMail';
+import sendMail from './sendMail';
 
 export default function Home() {
-
   const initialFormData = {
+    senderEmail: '',
     email: '',
-    first: '',
-    last: '',
-    sujet: '',
+    subject: '',
+    firstName: '',
+    lastName: '',
     message: '',
   };
 
   const [formData, setFormData] = useState(initialFormData);
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await SendMail(formData); // Envoi des données du formulaire à sendMail
-      // Réinitialiser le formulaire après l'envoi
-      setFormData(initialFormData);
+      const response = await sendMail(formData);
+
+      if (response) {
+        // Réinitialiser le formulaire après l'envoi
+        setFormData(initialFormData);
+        console.log('E-mail envoyé avec succès depuis la page.');
+      } else {
+        console.error('Erreur lors de l\'envoi de l\'e-mail depuis la page.');
+      }
     } catch (error) {
-      console.error(error);
+      console.error('Erreur lors de l\'envoi de l\'e-mail depuis la page:', error);
     }
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -36,7 +42,7 @@ export default function Home() {
 
   return (
     <form className="container" onSubmit={handleSubmit}>
-      {/* ... Votre formulaire existant */}
+      <label htmlFor="frm-email">Votre email</label>
       <input
         id="frm-email"
         type="email"
@@ -52,10 +58,10 @@ export default function Home() {
           <input
             id="frm-first"
             type="text"
-            name="first"
+            name="firstName"
             autoComplete="given-name"
             required
-            value={formData.first}
+            value={formData.firstName}
             onChange={handleChange}
           />
         </div>
@@ -64,10 +70,10 @@ export default function Home() {
           <input
             id="frm-last"
             type="text"
-            name="last"
+            name="lastName"
             autoComplete="family-name"
             required
-            value={formData.last}
+            value={formData.lastName}
             onChange={handleChange}
           />
         </div>
@@ -77,9 +83,9 @@ export default function Home() {
         <input
           id="frm-sujet"
           type="text"
-          name="sujet"
+          name="subject"
           required
-          value={formData.sujet}
+          value={formData.subject}
           onChange={handleChange}
         />
       </div>
