@@ -3,9 +3,15 @@
 import { signIn } from "next-auth/react";
 import { NextPage } from "next";
 import { FormEventHandler, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const SignIn: NextPage = (props): JSX.Element => {
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const router = useRouter();
+
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
@@ -16,9 +22,12 @@ const SignIn: NextPage = (props): JSX.Element => {
     });
 
     if (res && res.error) {
-      alert("Identifiant ou mot de passe incorrect");
+      setErrorMessage("Identifiant ou mot de passe incorrect");
+      setSuccessMessage("");
     } else {
-      alert("Utilisateur connecté");
+      setErrorMessage("");
+      setSuccessMessage("Utilisateur connecté");
+      router.push("/");
     }
   };
   return (
@@ -72,6 +81,16 @@ const SignIn: NextPage = (props): JSX.Element => {
                 }
               />
             </div>
+          </div>
+
+          <div>
+            {errorMessage && (
+              <p className="text-red-600 text-center">{errorMessage}</p>
+            )}
+
+            {successMessage && (
+              <p className="text-green-600 text-center">{successMessage}</p>
+            )}
           </div>
 
           <div>
