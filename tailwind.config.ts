@@ -19,11 +19,11 @@ const config: Config = {
       colors: {
         // DarkMode
         gray: {
-          100: "#f9f9f9",
-          200: "#838383",
-          300: "#bbbbbb",
-          400: "#e0e0e0",
-          900: "#202020"
+          100: "#f9f9f9", // Background
+          200: "#838383", // Interative component
+          300: "#bbbbbb", // Border & separator
+          400: "#e0e0e0", // Solid color
+          900: "#202020" // Accessible 
         },
         blue: {
           100: "#f4faff",
