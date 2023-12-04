@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from 'next';
 // import { signika } from '@/app/ui/fonts';
 import ThemeProvider from './src/theme/ThemeProvider';
@@ -6,9 +7,8 @@ import clsx from 'clsx';
 import './ui/reset.css';
 import './ui/globals.css';
 
-import Header from "@/app/components/header/pages";
-import Footer from "@/app/components/footer/pages";
-import React from 'react';
+import Header from "../app/components/header/pages";
+import Footer from "../app/components/footer/pages";
 
 
 export const metadata: Metadata = {
