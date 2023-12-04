@@ -1,6 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
+
 // import { signika } from '@/app/ui/fonts';
+
 import ThemeProvider from './src/theme/ThemeProvider';
 import ThemeToggler from './src/theme/ThemeToggler';
 import clsx from 'clsx';
@@ -10,12 +12,12 @@ import './ui/globals.css';
 import Header from "../app/components/header/pages";
 import Footer from "../app/components/footer/pages";
 
+import NextAuthSessionProvider from "./providers/SessionProvider";
 
 export const metadata: Metadata = {
   title: 'Dactap',
   description: 'Site d\'aide à la frappe au clavier',
 };
-
 
 
 export default function RootLayout({
@@ -31,13 +33,15 @@ export default function RootLayout({
         "bg-red-100 text-red-900" : ezr === "pend",
         "bg-violet-100 text-violet-900": ezr === "violet"
         })}>
-        
-        <Header />
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemeToggler />
-          {children}
-        </ThemeProvider>
-        <Footer />
+        <NextAuthSessionProvider>
+          <Header />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ThemeToggler />
+            {children} 
+          </ThemeProvider>
+          <Footer />
+        </NextAuthSessionProvider>  
+
       </body>
     </html>
   );
