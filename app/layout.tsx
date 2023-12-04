@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { signika } from '@/app/ui/fonts';
+// import { signika } from '@/app/ui/fonts';
 import ThemeProvider from './src/theme/ThemeProvider';
 import ThemeToggler from './src/theme/ThemeToggler';
 import clsx from 'clsx';
@@ -8,6 +8,7 @@ import './ui/globals.css';
 
 import Header from "@/app/components/header/pages";
 import Footer from "@/app/components/footer/pages";
+import React from 'react';
 
 
 export const metadata: Metadata = {
