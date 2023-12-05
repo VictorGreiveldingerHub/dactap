@@ -1,5 +1,9 @@
 // Page d'accueil 
+
+"use client";
+
 import Image from 'next/image';
+
 import { signika } from "@/app/ui/fonts";
 import HeroImage from "@/app/ui/image/Hero_section_ordinateur.png";
 import ContactErgo from "@/app/ui/image/Contact_ergo_bannière.png";
@@ -16,12 +20,14 @@ import {
 
 
 const HomePage = () => {
+
   const svgProps = {
     width: '100vw',
     height: "100vh",
     fill: "bg-blue-100",
     fill2: "bg-blue-900"
   }
+
 
   return (
     <main>

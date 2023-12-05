@@ -52,6 +52,12 @@ const Header = () => {
                     )
                     })
                 }
+            <nav className="flex basis-1/2 justify-between items-center">
+                <Link href="/" className="text-4xl">Dactap</Link>
+                <Link href="/games" className={`mr-4 my-auto hover:text-indigo-600 font-normal font-serif text-xl`}>Jeux</Link>
+                <Link href="/profil">Profil</Link>
+                <Link href="/dashboard">Statistiques</Link>
+                <Link href="/connection">Connexion</Link>
             </nav>
             <div className="flex basis-1/2 justify-center items-end">
                 {isLogged ? (
