@@ -1,3 +1,3 @@
 export default function ProfilPage(){
-    return <p>Je suis la page des jeux</p>
+    return <p>Je suis la page profil</p>
 };
