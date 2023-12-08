@@ -12,7 +12,7 @@ import {
   Mail,
 } from 'lucide-react'
 
-import SvgComponent from "@/app/ui/utils/SvgComponent";
+// import SvgComponent from "@/app/ui/utils/SvgComponent";
 
 
 const HomePage = () => {
