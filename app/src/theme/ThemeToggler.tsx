@@ -16,6 +16,10 @@ const ThemeToggler = () => {
     return null;
   }
 
+  if (theme === "system") {
+    setTheme(localStorage.getItem("theme") ?? "");
+  }
+
   return (
     <select value={theme} onChange={(e) => setTheme(e.target.value)}>
       <option value="system">System</option>

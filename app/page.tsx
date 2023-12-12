@@ -14,7 +14,43 @@ import {
   Mail,
 } from "lucide-react";
 
-
+const cards = [
+  // <div
+  //   id="card"
+  //   className="flex-1 w-64 rounded-lg shadow-lg blue:bg-secondary text-primary"
+  // >
+  //   <Rocket />
+  //   <h2>Leçons intéractives</h2>
+  //   <span>
+  //     Améliorez vos compétences tout en vous amusant avec nos jeux
+  //     conçus pour renforcer vos capacités de frappe.
+  //   </span>
+  // </div>
+  {
+    title: "Leçons intéractives",
+    description:
+      "Améliorez vos compétences tout en vous amusant avec nos jeux conçus pour renforcer vos capacités de frappe.",
+    icon: <Rocket />,
+  },
+  {
+    title: "Jeux stimulants",
+    description:
+      "Devenez le meilleur dans la discipline de la frappe au clavier grâce à un système de classement.",
+    icon: <Gamepad2 />,
+  },
+  {
+    title: "Suivi de progression",
+    description:
+      "Visualisez vos progrès au fil du temps, identifiez vos forces et concentrez-vous sur les domaines à améliorer.",
+    icon: <BarChart3 />,
+  },
+  {
+    title: "Exercices personnalisables",
+    description:
+      "Donner et modifier à votre guise un exercice à une ou plusieurs personne affiliée à votre profil.",
+    icon: <GraduationCap />,
+  },
+];
 const HomePage = () => {
   return (
     <main>
@@ -28,53 +64,29 @@ const HomePage = () => {
               (Dactylographie).
             </h4>
           </div>
-          <Image src={HeroImage} alt="un gros ordinateur avec un clavier" priority={true}/>
+          <Image
+            src={HeroImage}
+            alt="un gros ordinateur avec un clavier"
+            priority={true}
+          />
           <ArrowDown className="animate-bounce" />
         </div>
         {/* Fin page d'accueil - Hero Header */}
         {/* Page d'accueil - Présentation */}
         <div
           id="cards"
-          className="flex flex-wrap items-center p-8"
+          className="flex flex-wrap items-center p-8 blue:bg-solidColor text-secondary green:bg-solidColor text-secondary red:bg-solidColor text-secondary dark:bg-solidColor"
         >
-          <div
-            id="card"
-            className="flex-1 w-64 rounded-lg shadow-lg"
-          >
-            <Rocket />
-            <h2>Leçons intéractives</h2>
-            <span>
-              Améliorez vos compétences tout en vous amusant avec nos jeux
-              conçus pour renforcer vos capacités de frappe.
-            </span>
-          </div>
-          <div
-            id="card"
-            className="flex-1 w-64 rounded-lg shadow-lg"
-          >
-            <Gamepad2 />
-            <h2>Jeux stimulants</h2>
-            <span>
-              Devenez le meilleur dans la discipline de la frappe au clavier
-              grâce à un système de classement.
-            </span>
-          </div>
-          <div id="card" className="p-4 rounded-lg shadow-lg">
-            <BarChart3 />
-            <h2>Suivi de progression</h2>
-            <span>
-              Visualisez vos progrès au fil du temps, identifiez vos forces et
-              concentrez-vous sur les domaines à améliorer.
-            </span>
-          </div>
-          <div id="card" className="p-4 rounded-lg shadow-lg">
-            <GraduationCap />
-            <h2>Exercices personnalisables</h2>
-            <span>
-              Donner et modifier à votre guise un exercice à une ou plusieurs
-              personne affiliée à votre profil.
-            </span>
-          </div>
+          {cards.map((card) => (
+            <div
+              id="card"
+              className="flex-1 w-64 rounded-lg shadow-lg blue:bg-secondary text-primary"
+            >
+              {card.icon}
+              <h2>{card.title}</h2>
+              <span>{card.description}</span>
+            </div>
+          ))}
         </div>
         {/* Fin page d'accueil - Présentation */}
         {/* Page d'accueil - Ergothérapeute ? */}
