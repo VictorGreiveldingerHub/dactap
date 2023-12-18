@@ -16,24 +16,28 @@ import {
 
 const cards = [
   {
+    id: 1,
     title: "Leçons intéractives",
     description:
       "Améliorez vos compétences tout en vous amusant avec nos jeux conçus pour renforcer vos capacités de frappe.",
     icon: <Rocket />,
   },
   {
+    id: 2,
     title: "Jeux stimulants",
     description:
       "Devenez le meilleur dans la discipline de la frappe au clavier grâce à un système de classement.",
     icon: <Gamepad2 />,
   },
   {
+    id: 3,
     title: "Suivi de progression",
     description:
       "Visualisez vos progrès au fil du temps, identifiez vos forces et concentrez-vous sur les domaines à améliorer.",
     icon: <BarChart3 />,
   },
   {
+    id: 4,
     title: "Exercices personnalisables",
     description:
       "Donner et modifier à votre guise un exercice à une ou plusieurs personne affiliée à votre profil.",
@@ -70,6 +74,7 @@ const HomePage = () => {
           {cards.map((card) => (
             <div
               id="card"
+              key={card.id}
               className="flex flex-col items-center justify-center p-5 m-3 w-1/3 rounded-lg shadow-lg text-center blue:bg-900 text-100 green:bg-900 text-100 red:bg-900 text-100 dark:bg-900"
             >
               {card.icon}

@@ -9,11 +9,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      rotate: {
-        "90": "90deg",
-      },
-    },
+    extend: {},
   },
   plugins: [
     createThemes({

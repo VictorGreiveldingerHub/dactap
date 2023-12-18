@@ -8,8 +8,23 @@ const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
+    // Penser à mettre le theme de préférence dans un state, voir si on peut stocker ça dans la BDD
+
+    if (theme === "system") {
+      const userPrefersLight =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: light)").matches;
+
+      if (userPrefersLight) {
+        setTheme("red");
+      } else {
+        setTheme("dark");
+      }
+    }
+    if (theme === "light") {
+      setTheme("green");
+    }
     setMounted(true);
-    console.log(localStorage.getItem("theme"));
   }, [theme]);
 
   if (!mounted) {
@@ -26,10 +41,10 @@ const ThemeToggler = () => {
   ];
 
   return (
-    <div className="flex flex-col h-5">
+    <div className="flex">
       {themes.map((t) => {
         return (
-          <label key={t.name} className="m-2 p-1 border rounded">
+          <label key={t.name} className="m-2 p-1">
             <input
               key={t.name}
               type="radio"

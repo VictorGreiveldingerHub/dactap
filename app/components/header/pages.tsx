@@ -68,6 +68,7 @@ const Header = () => {
         )}
       </div>
 
+      {/* Gère le menu paramètre */}
       <button>
         <Settings onClick={() => setOpenSettings(!openSettings)} />
         {openSettings && <Parametre />}
