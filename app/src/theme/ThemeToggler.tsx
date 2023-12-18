@@ -26,7 +26,7 @@ const ThemeToggler = () => {
   ];
 
   return (
-    <div className="flex flex-col h-5 red:text-red-100 blue:text-blue-100 green:text-green-100">
+    <div className="flex flex-col h-5">
       {themes.map((t) => {
         return (
           <label key={t.name} className="m-2 p-1 border rounded">
