@@ -16,18 +16,33 @@ const ThemeToggler = () => {
     return null;
   }
 
-  if (theme === "system") {
-    setTheme(localStorage.getItem("theme") ?? "");
-  }
+  const themes = [
+    { name: "light", value: "light" },
+    { name: "dark", value: "dark" },
+    { name: "system", value: "system" },
+    { name: "vert", value: "green" },
+    { name: "rouge", value: "red" },
+    { name: "bleu", value: "blue" },
+  ];
 
   return (
-    <select value={theme} onChange={(e) => setTheme(e.target.value)}>
-      <option value="system">System</option>
-      <option value="dark">Dark</option>
-      <option value="red">Rouge</option>
-      <option value="green">Vert</option>
-      <option value="blue">Bleu</option>
-    </select>
+    <div className="flex flex-col h-5 red:text-red-100 blue:text-blue-100 green:text-green-100">
+      {themes.map((t) => {
+        return (
+          <label key={t.name} className="m-2 p-1 border rounded">
+            <input
+              key={t.name}
+              type="radio"
+              value={t.value}
+              checked={theme === t.value}
+              onChange={(e) => setTheme(e.target.value)}
+              className="border rounded"
+            />
+            {t.name}
+          </label>
+        );
+      })}
+    </div>
   );
 };
 

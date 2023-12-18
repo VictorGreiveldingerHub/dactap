@@ -15,17 +15,6 @@ import {
 } from "lucide-react";
 
 const cards = [
-  // <div
-  //   id="card"
-  //   className="flex-1 w-64 rounded-lg shadow-lg blue:bg-secondary text-primary"
-  // >
-  //   <Rocket />
-  //   <h2>Leçons intéractives</h2>
-  //   <span>
-  //     Améliorez vos compétences tout en vous amusant avec nos jeux
-  //     conçus pour renforcer vos capacités de frappe.
-  //   </span>
-  // </div>
   {
     title: "Leçons intéractives",
     description:
@@ -51,6 +40,7 @@ const cards = [
     icon: <GraduationCap />,
   },
 ];
+
 const HomePage = () => {
   return (
     <main>
@@ -75,12 +65,12 @@ const HomePage = () => {
         {/* Page d'accueil - Présentation */}
         <div
           id="cards"
-          className="flex flex-wrap items-center p-8 blue:bg-solidColor text-secondary green:bg-solidColor text-secondary red:bg-solidColor text-secondary dark:bg-solidColor"
+          className="flex flex-wrap justify-center items-center p-8 blue:bg-300 text-100 green:bg-300 text-100 red:bg-300 text-100 dark:bg-300 text-100"
         >
           {cards.map((card) => (
             <div
               id="card"
-              className="flex-1 w-64 rounded-lg shadow-lg blue:bg-secondary text-primary"
+              className="flex flex-col items-center justify-center p-5 m-3 w-1/3 rounded-lg shadow-lg text-center blue:bg-900 text-100 green:bg-900 text-100 red:bg-900 text-100 dark:bg-900"
             >
               {card.icon}
               <h2>{card.title}</h2>

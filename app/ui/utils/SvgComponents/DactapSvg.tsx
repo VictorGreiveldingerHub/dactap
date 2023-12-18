@@ -5,7 +5,7 @@ interface DactapSvgProps {}
 const DactapSvg: React.FC<DactapSvgProps> = () => {
   return (
     <svg
-      width="200"
+      width="150"
       height="126"
       viewBox="0 0 477 126"
       fill="none"

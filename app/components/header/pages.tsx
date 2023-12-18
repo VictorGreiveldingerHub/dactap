@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Settings } from "lucide-react";
 import DactapSvg from "@/app/ui/utils/SvgComponents/DactapSvg";
-import ThemeToggler from "@/app/src/theme/ThemeToggler";
+import Parametre from "../parametres";
 
 const navLinks = [
   {
@@ -32,11 +32,12 @@ const navLinks = [
 
 const Header = () => {
   const pathname = usePathname();
-  const [isLogged, SetLogged] = useState(false);
+  const [isLogged, setLogged] = useState(false);
+  const [openSettings, setOpenSettings] = useState(false);
 
   return (
     <header className="flex mx-10 my-5 font-bold">
-      <nav className="flex basis-1/2 justify-between items-end">
+      <nav className="flex basis-1/2 justify-between items-center">
         {navLinks.map((link) => {
           const isActive = pathname.startsWith(link.href);
           return (
@@ -50,15 +51,17 @@ const Header = () => {
           );
         })}
       </nav>
-      <div className="flex basis-1/2 justify-center items-end">
+      <div className="flex basis-1/2 justify-center items-center">
         {isLogged ? (
           <button>Déconnexion</button>
         ) : (
           <>
             <button>
-              <Link href="/signin">Connexion</Link>
+              <Link className="px-3" href="/signin">
+                Connexion
+              </Link>
             </button>
-            <button className="px-3 shadow-md border border-blue-900 rounded-full hover:bg-blue-900 hover:text-blue-100">
+            <button className="px-3 shadow-md border rounded-full blue:border-blue-900 blue:hover:bg-blue-900 blue:hover:text-blue-100 red:border-red-900 red:hover:bg-red-900 red:hover:text-red-100 green:border-green-900 green:hover:bg-green-900 green:hover:text-green-100 dark:border-dark-900 dark:hover:bg-dark-100 dark:hover:text-dark-900">
               <Link href="/signup">Inscription</Link>
             </button>
           </>
@@ -66,9 +69,9 @@ const Header = () => {
       </div>
 
       <button>
-        <Settings />
+        <Settings onClick={() => setOpenSettings(!openSettings)} />
+        {openSettings && <Parametre />}
       </button>
-      <ThemeToggler />
     </header>
   );
 };
