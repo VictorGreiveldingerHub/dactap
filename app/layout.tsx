@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="blue:bg-100 text-900 green:bg-100 green:text-900 red:bg-100 text-900 dark:bg-900 dark:text-100">
+      <body className="blue:bg-100 blue:text-blue-900 green:bg-100 green:text-green-900 red:bg-100 red:text-red-900 dark:bg-900 dark:text-100">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextAuthSessionProvider>
             <Header />

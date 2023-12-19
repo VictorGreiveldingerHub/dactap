@@ -14,7 +14,7 @@ import {
   Mail,
 } from "lucide-react";
 
-const cards = [
+let cards = [
   {
     id: 1,
     title: "Leçons intéractives",
