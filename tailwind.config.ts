@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import { createThemes } from "tw-colors";
+import themeLightImage from "./app/src/img/themeLight.png";
 
 const config: Config = {
   darkMode: "class",
@@ -9,7 +10,11 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "theme-light": `url('${themeLightImage}')`,
+      },
+    },
   },
   plugins: [
     createThemes({

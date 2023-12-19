@@ -4,8 +4,8 @@ import "./ui/reset.css";
 import "./ui/globals.css";
 import Header from "../app/components/header/pages";
 import Footer from "../app/components/footer/pages";
-import NextAuthSessionProvider from "./providers/SessionProvider";
-import ThemeProvider from "@/app/src/theme/ThemeProvider";
+import NextAuthSessionProvider from "./src/providers/SessionProvider";
+import ThemeProvider from "./src/providers/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Dactap",
