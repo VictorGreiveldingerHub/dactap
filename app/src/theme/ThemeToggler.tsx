@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import LightTheme from "../../ui/image/themeLight.png";
+import LightTheme from "@/app/ui/image/themeLight.png";
+import DarkTheme from "@/app/ui/image/themeDark.png";
 
 const ThemeToggler = () => {
   const [mounted, setMounted] = useState(false);
@@ -32,10 +33,19 @@ const ThemeToggler = () => {
     return null;
   }
 
-  const themes = [
-    { name: "light", value: "light" },
-    { name: "dark", value: "dark" },
-    { name: "system", value: "system" },
+  interface Theme {
+    name: string;
+    value: string;
+    img: StaticImageData;
+  }
+
+  const themes: Theme[] = [
+    { name: "light", value: "light", img: LightTheme },
+    { name: "dark", value: "dark", img: DarkTheme },
+    { name: "system", value: "system", img: LightTheme },
+  ];
+
+  const colorsAvailable = [
     { name: "vert", value: "green" },
     { name: "rouge", value: "red" },
     { name: "bleu", value: "blue" },
@@ -47,25 +57,44 @@ const ThemeToggler = () => {
         return (
           <label
             key={t.name}
-            className="m-10 p-5 border border-solid rounded red:border-red-900 blue:border-blue-900 green:border-green-900"
+            className="m-15 p-10 border border-solid flex flex-col rounded red:border-red-900 blue:border-blue-900 green:border-green-900"
           >
-            <Image
-              src={LightTheme}
-              alt="theme"
-              className="w-10 h-10"
-              priority={true}
-            />
-            <input
-              key={t.name}
-              type="radio"
-              value={t.value}
-              checked={theme === t.value}
-              onChange={(e) => setTheme(e.target.value)}
-            />
-            {t.name}
+            <div>
+              <Image src={t.img} alt="theme" width={50} height={50} />
+            </div>
+            <div>
+              <input
+                key={t.name}
+                type="radio"
+                value={t.value}
+                checked={theme === t.value}
+                onChange={(e) => setTheme(e.target.value)}
+              />
+              {t.name}
+            </div>
           </label>
         );
       })}
+      {theme !== "dark" &&
+        colorsAvailable.map((color) => {
+          return (
+            <label
+              key={color.name}
+              className="m-15 p-10 border border-solid flex flex-col rounded red:border-red-900 blue:border-blue-900 green:border-green-900"
+            >
+              <div>
+                <input
+                  key={color.name}
+                  type="radio"
+                  value={color.value}
+                  checked={theme === color.value}
+                  onChange={(e) => setTheme(e.target.value)}
+                />
+                {color.name}
+              </div>
+            </label>
+          );
+        })}
     </div>
   );
 };
