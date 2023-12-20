@@ -52,49 +52,51 @@ const ThemeToggler = () => {
   ];
 
   return (
-    <div className="flex">
-      {themes.map((t) => {
-        return (
-          <label
-            key={t.name}
-            className="m-15 p-10 border border-solid flex flex-col rounded red:border-red-900 blue:border-blue-900 green:border-green-900"
-          >
-            <div>
-              <Image src={t.img} alt="theme" width={50} height={50} />
-            </div>
-            <div>
-              <input
-                key={t.name}
-                type="radio"
-                value={t.value}
-                checked={theme === t.value}
-                onChange={(e) => setTheme(e.target.value)}
-              />
-              {t.name}
-            </div>
-          </label>
-        );
-      })}
-      {theme !== "dark" &&
-        colorsAvailable.map((color) => {
+    <div className="flex flex-col gap-10">
+      <div className="flex gap-5">
+        {themes.map((t) => {
           return (
             <label
-              key={color.name}
-              className="m-15 p-10 border border-solid flex flex-col rounded red:border-red-900 blue:border-blue-900 green:border-green-900"
+              key={t.name}
+              className="flex flex-col flex-auto h-[106px] w-[206px] justify-around border border-solid rounded group"
             >
+              <div className="group-hover:bg-gray-200 bg-gray-100 h-inherit flex items-center justify-center">
+                <Image src={t.img} alt="theme" width={50} height={50} />
+              </div>
+              <div className="relative before:absolute before:inset-x-0 before:bottom--10 before:border-b before:border-black"></div>
               <div>
                 <input
-                  key={color.name}
+                  key={t.name}
                   type="radio"
-                  value={color.value}
-                  checked={theme === color.value}
+                  value={t.value}
+                  checked={theme === t.value}
                   onChange={(e) => setTheme(e.target.value)}
                 />
-                {color.name}
+                {t.name}
               </div>
             </label>
           );
         })}
+      </div>
+      <div className="flex gap-5">
+        {theme !== "dark" &&
+          colorsAvailable.map((color) => {
+            return (
+              <label key={color.name} className="flex flex-col flex-auto">
+                <div>
+                  <input
+                    key={color.name}
+                    type="radio"
+                    value={color.value}
+                    checked={theme === color.value}
+                    onChange={(e) => setTheme(e.target.value)}
+                  />
+                  {color.name}
+                </div>
+              </label>
+            );
+          })}
+      </div>
     </div>
   );
 };

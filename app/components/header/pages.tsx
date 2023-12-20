@@ -36,7 +36,7 @@ const Header = () => {
   const [openSettings, setOpenSettings] = useState(false);
 
   return (
-    <header className="flex mx-10 my-5 font-bold">
+    <header className="flex mx-10 font-bold">
       <nav className="flex basis-1/2 justify-between items-center">
         {navLinks.map((link) => {
           const isActive = pathname.startsWith(link.href);

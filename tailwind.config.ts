@@ -14,6 +14,9 @@ const config: Config = {
       // backgroundImage: {
       //   "theme-light": `url('${themeLightImage}')`,
       // },
+      height: {
+        inherit: "inherit",
+      },
     },
   },
   plugins: [
