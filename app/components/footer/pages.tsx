@@ -41,9 +41,9 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <Link href="/mentions-legales">Mentions légales</Link>
+                <Link href="/legal-notice">Mentions légales</Link>
                 <Link href="/contact">Contact</Link>
-                <Link href="/mentions-legales">Condition générales d'utilisation</Link>
+                <Link href="/cgu">Condition générales d'utilisation</Link>
                 <Link href="/faq">Foire aux question</Link>
             </div>
             <div>
