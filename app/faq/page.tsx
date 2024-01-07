@@ -47,6 +47,27 @@ const FAQPage = () => {
           persiste, consultez un professionnel de la santé.
         </p>
       </div>
+
+      <div className="py-8">
+        <h2 className="text-xl font-semibold">
+          Je suis un ergothérapeute, comment faire pour ajouter un patient dans ma liste de suivi ?
+        </h2>
+        <p className="mt-4">
+          Pour ajouter une nouveau patient dans votre liste de suivi, plusieurs cas s’offre à vous.
+          <br/>
+          <br/>
+          Si le patient est mineur, alors il vous faudra renseigner l’adresse mail de la personne légale qui representera ce patient (un parent etc...), cette personne.
+        </p>
+      </div>
+
+      <div className="py-8">
+        <h2 className="text-xl font-semibold">
+          Je suis un ergothérapeute, comment gérer les patients qui me sont affiliés ?
+        </h2>
+        <p className="mt-4">
+          Si vous ressentez des douleurs aux poignets, assurez-vous d'avoir une posture ergonomique. Utilisez un clavier confortable, gardez vos poignets droits et faites des pauses régulières. Si la douleur persiste, consultez un professionnel de la santé.
+        </p>
+      </div>
     </div>
   );
 };
