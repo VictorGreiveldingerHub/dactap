@@ -53,10 +53,10 @@ const FAQPage = () => {
           Je suis un ergothérapeute, comment faire pour ajouter un patient dans ma liste de suivi ?
         </h2>
         <p className="mt-4">
-          Pour ajouter une nouveau patient dans votre liste de suivi, plusieurs cas s’offre à vous.
+          Si le patient est mineur, merci de renseigner l’adresse mail de la personne qui le représente légalement (père, mère etc...)
           <br/>
           <br/>
-          Si le patient est mineur, alors il vous faudra renseigner l’adresse mail de la personne légale qui representera ce patient (un parent etc...), cette personne.
+          Un mail contenant un mot de passe unique et utilisable seulement une fois lui sera alors envoyé, pour valider la création du compte, il lui faudra se connecter avec, avant de renseigner son propre mot de passe lors de sa première connexion.
         </p>
       </div>
 
