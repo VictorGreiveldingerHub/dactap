@@ -1,9 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import { 
-    ArrowUp,
-    CircleDashed,
-  } from "lucide-react";
+import React from 'react'
+import Link from 'next/link'
+import { ArrowUp, CircleDashed } from 'lucide-react'
 
 const Footer = () => {
     return (
@@ -53,4 +50,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default Footer
