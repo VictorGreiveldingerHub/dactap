@@ -50,7 +50,7 @@ const Footer = () => {
         <Link href="/faq">Foire aux question</Link>
       </div>
       <div>
-        © Dactap, tous droits réservés. Projet de fin d'étude, fait avec{" "}
+        © Dactap, tous droits réservés. Projet de fin d'étude, fait avec
         <span className="text-red-500">♥</span>
       </div>
     </footer>

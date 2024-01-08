@@ -40,9 +40,9 @@ const ThemeToggler = () => {
   }
 
   const themes: Theme[] = [
-    { name: "light", value: "light", img: LightTheme },
-    { name: "dark", value: "dark", img: DarkTheme },
-    { name: "system", value: "system", img: LightTheme },
+    { name: "Light", value: "light", img: LightTheme },
+    { name: "Dark", value: "dark", img: DarkTheme },
+    { name: "System", value: "system", img: LightTheme },
   ];
 
   const colorsAvailable = [
@@ -64,13 +64,14 @@ const ThemeToggler = () => {
                 <Image src={t.img} alt="theme" width={50} height={50} />
               </div>
               <div className="relative before:absolute before:inset-x-0 before:bottom--10 before:border-b before:border-black"></div>
-              <div>
+              <div className="flex justify-start m-3">
                 <input
                   key={t.name}
                   type="radio"
                   value={t.value}
                   checked={theme === t.value}
                   onChange={(e) => setTheme(e.target.value)}
+                  className="mr-2"
                 />
                 {t.name}
               </div>
