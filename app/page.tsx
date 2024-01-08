@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { signika } from "@/app/ui/fonts";
 import HeroImage from "@/app/ui/image/Hero_section_ordinateur.png";
 import ContactErgo from "@/app/ui/image/Contact_ergo_bannière.png";
@@ -12,7 +13,8 @@ import {
   Gamepad2,
   GraduationCap,
   Mail,
-} from "lucide-react";
+} from 'lucide-react'
+
 
 let cards = [
   {
@@ -46,6 +48,7 @@ let cards = [
 ];
 
 const HomePage = () => {
+
   return (
     <main>
       <div className={`${signika.className} antialiased flex flex-col`}>
@@ -58,11 +61,13 @@ const HomePage = () => {
               (Dactylographie).
             </h4>
           </div>
+
           <Image
             src={HeroImage}
             alt="un gros ordinateur avec un clavier"
             priority={true}
           />
+
           <ArrowDown className="animate-bounce" />
         </div>
         {/* Fin page d'accueil - Hero Header */}
@@ -114,7 +119,7 @@ const HomePage = () => {
         {/* Page d'accueil - Fin ergothérapeute ? */}
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
