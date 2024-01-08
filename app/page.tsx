@@ -5,7 +5,8 @@ import Image from 'next/image'
 
 import { signika } from '@/app/ui/fonts'
 import HeroImage from '@/app/ui/image/Hero_section_ordinateur.png'
-import ContactErgo from '../app/ui/image/ContactErgo.png'
+import ContactErgo from '@/app/ui/image/Contact_ergo_bannière.png'
+import Contact from './app/ui/image/Contact_ergo_bannière.png'
 import {
   ArrowDown,
   Rocket,
