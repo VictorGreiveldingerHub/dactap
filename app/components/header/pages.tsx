@@ -1,28 +1,80 @@
 "use client";
-import React from "react";
+
+import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Settings } from "lucide-react";
+import DactapSvg from "@/app/ui/utils/SvgComponents/DactapSvg";
+import Parametre from "../parametres";
+
+const navLinks = [
+  {
+    key: "dactap",
+    name: <DactapSvg />,
+    href: "/",
+  },
+  {
+    key: "jeux",
+    name: "Jeux",
+    href: "/games",
+  },
+  {
+    key: "profil",
+    name: "Profil",
+    href: "/profil",
+  },
+  {
+    key: "statistiques",
+    name: "Statistiques",
+    href: "/dashboard",
+  },
+];
 
 const Header = () => {
-    return (
-        <header className="flex mx-10 my-5 font-bold">
-            <nav className="flex basis-1/2 justify-between items-center">
-                <Link href="/" className="text-4xl">Dactap</Link>
-                <Link href="/games" className={`mr-4 my-auto hover:text-indigo-600 font-normal font-serif text-xl`}>Jeux</Link>
-                <Link href="/profil">Profil</Link>
-                <Link href="/dashboard">Statistiques</Link>
-            </nav>
-            <div className="flex basis-1/2 justify-center">
-                <button>Connexion</button>
-                <button className="mx-2 py-1 px-3 border border-blue-900 rounded-full hover:bg-blue-900 hover:text-blue-100 hover:text-lg">Inscription</button>
-                {/* <button>Déconnexion</button> */}
-            </div>
+  const pathname = usePathname();
+  const [isLogged, setLogged] = useState(false);
+  const [openSettings, setOpenSettings] = useState(false);
 
+  return (
+    <header className="flex mx-10 font-bold">
+      <nav className="flex basis-1/2 justify-between items-center">
+        {navLinks.map((link) => {
+          const isActive = pathname.startsWith(link.href);
+          return (
+            <Link
+              key={link.key}
+              href={link.href}
+              className={isActive ? "underline underline-offset-4" : ""}
+            >
+              {link.name}
+            </Link>
+          );
+        })}
+      </nav>
+      <div className="flex basis-1/2 justify-center items-center">
+        {isLogged ? (
+          <button>Déconnexion</button>
+        ) : (
+          <>
             <button>
-                <Settings />
+              <Link className="px-3" href="/signin">
+                Connexion
+              </Link>
             </button>
-        </header>
-    );
+            <button className="px-3 shadow-md border rounded-full blue:border-blue-900 blue:hover:bg-blue-900 blue:hover:text-blue-100 red:border-red-900 red:hover:bg-red-900 red:hover:text-red-100 green:border-green-900 green:hover:bg-green-900 green:hover:text-green-100 dark:border-dark-900 dark:hover:bg-dark-100 dark:hover:text-dark-900">
+              <Link href="/signup">Inscription</Link>
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Gère le menu paramètre */}
+      <button>
+        <Settings onClick={() => setOpenSettings(!openSettings)} />
+        {openSettings && <Parametre />}
+      </button>
+    </header>
+  );
 };
 
 export default Header;

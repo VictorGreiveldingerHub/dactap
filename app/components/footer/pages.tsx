@@ -1,13 +1,14 @@
-import React from 'react'
-import Link from 'next/link'
-import { ArrowUp, CircleDashed } from 'lucide-react'
+import React from "react";
+import Link from "next/link";
+import { ArrowUp, CircleDashed } from "lucide-react";
+import DactapSvg from "@/app/ui/utils/SvgComponents/DactapSvg";
 
 const Footer = () => {
   return (
     <footer className="container">
       <div className="flex ">
         <Link href="/">
-          <h2>Dactap</h2>
+          <DactapSvg />
         </Link>
         <h3>Ressources</h3>
         <ul className="list-none">
@@ -49,10 +50,11 @@ const Footer = () => {
         <Link href="/faq">Foire aux question</Link>
       </div>
       <div>
-        © Dactap, tous droits réservés. Projet de fin d'étude, fait avec ❤️
+        © Dactap, tous droits réservés. Projet de fin d'étude, fait avec
+        <span className="text-red-500">♥</span>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer
